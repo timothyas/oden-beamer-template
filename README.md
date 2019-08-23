@@ -5,6 +5,8 @@ This template borrows heavily from the old ICES beamer template from Teresa Port
 
 See [the Oden Institute style guide](https://www.oden.utexas.edu/about/style-guide/) for other styles.
 
-## Example title slide
+## Example
 
-![](./example_title.png)
+![](./img/example_title.png)
+
+![](./img/example_slide.png)
