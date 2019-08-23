@@ -7,4 +7,4 @@ See [the Oden Institute style guide](https://www.oden.utexas.edu/about/style-gui
 
 ## Example title slide
 
-![oden_title](./example_title.pdf)
+![](./example_title.png)
