@@ -1,55 +1,226 @@
-\documentclass[11pt]{beamer}
-\usepackage{oden_beamer_template}
+\documentclass[10pt, aspectratio=169]{oden_beamer}
+% Try using aspectratio=169, handout, blue, and/or dark in the [] above.
 
-\begin{document}
-\title{\vspace{2ex}\\
-       Something about computational science\\
-       \vspace{2ex}
-   } 
-\author{\textbf{Presenter's name}\\
-        other helpful person 1\\
-        other helpful person 2}
-\date{
-    \vspace{2ex}\\
-    \centering
-    Really Cool Conference\\ 
-    The Date
-    \\
+%%%%%%%%%%%%%%%%%%%%%%
+% package imports here
+%%%%%%%%%%%%%%%%%%%%%%
+
+% \setbeameroption{show notes}  % Print speaker notes
+
+\AtBeginSection[]{              % Show outline at beginning of each section
+\begin{frame}
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+\end{frame}
 }
 
+\begin{document} % ============================================================
 
+% Title page definitions ------------------------------------------------------
+\title{My Computational Science Presentation}
+\author{\textbf{Author/Presenter}
+        \\
+        Author/Presenter 2
+        \\
+        Author/Presenter 3}
+% \institute{Oden Institute for Computational Engineering and Sciences}
+\date{
+    \centering
+    % Conference Name
+    % \\
+    The Date
+}
 
-\begin{frame}
-  \titlepage
+\begin{frame} % ---------------------------------------------------------------
+\titlepage
 \end{frame}
 
-\begin{section}{Section 1}
+\section{How Basic Elements Look} % ===========================================
 
-    \begin{frame}{A regular slide title}
+\begin{frame} % ---------------------------------------------------------------
+\frametitle{Regular Titles Are Colored}
+\framesubtitle{So are subtitles!}
 
-        \begin{columns}
-            \hspace{.1cm}
-            \begin{column}{.5\textwidth}
-                \begin{itemize}
-                    \item<1-> Maybe
-                        \vspace{.25cm}
-                    \item<2-> even
-                        \vspace{.25cm}
-                    \item<3-> some
-                        \vspace{.25cm}
-                    \item<4-> bullets
-                \end{itemize}
-            \end{column}
-            \begin{column}{.45\textwidth}
-                \visible<5>{
-                    \begin{block}{A theorem}
-                        Or maybe an important point to make
-                    \end{block}
-                }
-            \end{column}
-        \end{columns}
-    \end{frame}
-\end{section}
+This is what a typical paragraph of text looks like on the slides.
+This is what a typical paragraph of text looks like on the slides.
+This is what a typical paragraph of text looks like on the slides.
 
+\vspace{.5cm}
+This is what an equation looks like (Green's first identity).
+\begin{equation*}
+    \int_{\Omega} \nabla u \cdot \nabla v \:d\Omega
+    = \int_{\Gamma} v \nabla u \cdot \hat{\mathbf{n}} \:d\Gamma
+    - \int_{\Omega} v \Delta u \:d\Omega
+\end{equation*}
+Use the \texttt{itemize} environment for a bullet-point list:
+\begin{itemize}
+    \item First item
+    \item Second item
+    \item[$\ast$] Item with a custom marker
+\end{itemize}
+
+Use the \texttt{enumerate} environment for a numbered list:
+\begin{enumerate}
+    \item First item
+    \item Second item
+\end{enumerate}
+\end{frame}
+
+\begin{frame} % ---------------------------------------------------------------
+\frametitle{This Slide Has Two Columns and Several Blocks}
+\begin{columns}
+\begin{column}{.49\textwidth}
+    Slides only have one column by default.
+    Use the \texttt{columns} environment to make two or more columns.
+    Columns can take the full page, or just part of a page.
+\end{column}
+%
+\begin{column}{.49\textwidth}
+    \begin{block}{A Block in a Column}
+        This is called a \texttt{block}.
+        It makes important points stand out!
+        Use blocks wisely.
+    \end{block}
+\end{column}
+\end{columns}
+
+\vspace{.5cm}
+Now we're back to a single-column format.
+
+\pause % "animation" command.
+
+\begin{block}{A Default Block}
+     This is the size of a default block in the default single-column format.
+\end{block}
+
+\begin{center}
+\begin{minipage}{.9\textwidth}
+\begin{block}{A non-quite-so-wide-but-still-centered Block}
+    The size of a block can be controlled with \texttt{minipage}.
+\end{block}
+\end{minipage}
+\end{center}
+\end{frame}
+
+% Speaker notes for the previous frame.
+\note[itemize]{
+    \item This is a note to remind the speaker what to do.
+    \item Use \texttt{\textbackslash setbeameroption\{show notes\}} in the preamble to show the speaker notes.
+}
+
+\section{Oden Theme Colors} % =================================================
+
+\begin{frame}
+\frametitle{Oden Color Palette}
+The \texttt{oden\_beamer} class defines the following colors:
+
+\begin{center}
+\begin{tabular}{lr}
+    \texttt{oden\_blue} &
+        \setbeamercolor{colorsample}{bg=oden_blue}
+        \begin{beamercolorbox}[wd=2cm,ht=.5cm]{colorsample}
+        \end{beamercolorbox}
+    \\
+    \texttt{oden\_blue\_dark} &
+        \setbeamercolor{colorsample}{bg=oden_blue_dark}
+        \begin{beamercolorbox}[wd=2cm,ht=.5cm]{colorsample}
+        \end{beamercolorbox}
+    \\
+    \texttt{burnt\_orange} &
+        \setbeamercolor{colorsample}{bg=burnt_orange}
+        \begin{beamercolorbox}[wd=2cm,ht=.5cm]{colorsample}
+        \end{beamercolorbox}
+    \\
+    \texttt{accent\_orange} &
+        \setbeamercolor{colorsample}{bg=accent_orange}
+        \begin{beamercolorbox}[wd=2cm,ht=.5cm]{colorsample}
+        \end{beamercolorbox}
+    \\
+    \texttt{charcoal} &
+        \setbeamercolor{colorsample}{bg=charcoal}
+        \begin{beamercolorbox}[wd=2cm,ht=.5cm]{colorsample}
+        \end{beamercolorbox}
+    \\
+    \texttt{chalk} &
+        \setbeamercolor{colorsample}{bg=chalk}
+        \begin{beamercolorbox}[wd=2cm,ht=.5cm]{colorsample}
+        \end{beamercolorbox}
+\end{tabular}
+\end{center}
+Change the text color with \texttt{\textbackslash textcolor\{colorname\}\{text here\}}.
+\begin{center}
+\begin{tabular}{lcr}
+    \texttt{\textbackslash textcolor\{accent\_orange\}\{some text\}}
+    & $\longrightarrow$ &
+    \textcolor{accent_orange}{some text}
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame} % ---------------------------------------------------------------
+\frametitle{Color Themes}
+The \texttt{oden\_beamer} class implements four main color themes.
+Select the theme by adding arguments to the \texttt{\textbackslash documentclass} command at the beginning of the \texttt{.tex} file.
+\begin{itemize} % The <1-> and <2-> indicators "animate" the bullet points.
+    \item<2-> \textcolor{highlight}{\underline{Light Orange}} (the default): white background, charcoal text, orange highlights.
+    Usage: \texttt{\textbackslash documentclass[10pt]\{oden\_beamer\}}
+    \vspace{.1cm}
+    \item<2-> \textcolor{highlight}{\underline{Light Blue}}: white background, charcoal text, blue highlights.
+    Usage: \texttt{\textbackslash documentclass[10pt, \underline{blue}]\{oden\_beamer\}}
+    \vspace{.1cm}
+    \item<3-> \textcolor{highlight}{\underline{Dark Orange}}: charcoal background, chalk text, orange highlights.
+    Usage: \texttt{\textbackslash documentclass[10pt, \underline{dark}]\{oden\_beamer\}}
+    \vspace{.1cm}
+    \item<3-> \textcolor{highlight}{\underline{Dark Blue}}: charcoal background, chalk text, blue highlights.
+    Usage: \texttt{\textbackslash documentclass[10pt, \underline{dark}, \underline{blue}]\{oden\_beamer\}}
+\end{itemize}
+
+\vspace{.25cm}
+\visible<4->{
+The theme also defines the colors \texttt{text} and \texttt{highlight}.
+Using these names instead of specific colors makes it easy to switch between themes.
+\begin{center}
+\begin{tabular}{lcr}
+    \texttt{\textbackslash textcolor\{highlight\}\{some text\}}
+    & $\longrightarrow$ &
+    \textcolor{highlight}{some text}
+\end{tabular}
+\end{center}}
+\end{frame}
+
+\begin{frame} % ---------------------------------------------------------------
+\frametitle{Color Theme Examples}
+
+\begin{center}
+\begin{tabular}{lr}
+    Light Orange: &
+        \setbeamercolor{colorsample}{bg=white,fg=charcoal}
+        \begin{beamercolorbox}[wd=5cm,ht=.5cm,dp=.25cm,center]{colorsample}
+            \textcolor{burnt_orange}{Title text} Regular text
+        \end{beamercolorbox}
+    \\ \\
+    Light Blue: &
+        \setbeamercolor{colorsample}{bg=white,fg=charcoal}
+        \begin{beamercolorbox}[wd=5cm,ht=.5cm,dp=.25cm,center]{colorsample}
+            \textcolor{oden_blue_dark}{Title text} Regular text
+        \end{beamercolorbox}
+    \\ \\
+    Dark Orange: &
+        \setbeamercolor{colorsample}{bg=charcoal,fg=chalk}
+        \begin{beamercolorbox}[wd=5cm,ht=.5cm,dp=.25cm,center]{colorsample}
+            \textcolor{accent_orange}{Title text} Regular text
+        \end{beamercolorbox}
+    \\ \\
+    Dark Blue: &
+        \setbeamercolor{colorsample}{bg=charcoal,fg=chalk}
+        \begin{beamercolorbox}[wd=5cm,ht=.5cm,dp=.25cm,center]{colorsample}
+            \textcolor{oden_blue}{Title text} Regular text
+        \end{beamercolorbox}
+    \\ \\
+\end{tabular}
+\end{center}
+
+The dark themes are particularly effective for virtual presentations (Zoom, etc.) and for rooms with low lighting.
+\end{frame}
 
 \end{document}
